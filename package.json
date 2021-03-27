@@ -2,15 +2,25 @@
   "name": "nodejs_tdd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env NODE_ENV=test mocha main/api/user/user.spec.js -exit -w",
+    "start": "node main/bin/www.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "sequelize": "^6.6.2",
+    "should": "^13.2.3",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2",
+    "supertest": "^6.1.3"
   }
 }
